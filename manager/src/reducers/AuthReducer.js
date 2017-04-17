@@ -11,7 +11,8 @@ const init_state = {
 	password: '',
 	user: null,
 	error: '',
-	loading: false
+	loading: false,
+	loginSuccess: false
 }
 
 export default (state = init_state, action) => {
@@ -36,14 +37,17 @@ export default (state = init_state, action) => {
 			return {
 				...state,
 				...init_state,
-				user: action.payload
+				user: action.payload,
+				error: '',
+				loginSuccess: true
 			}
 		case LOGIN_USER_FAIL:
 			return {
 				...state,
 				error: 'Authentication Failed',
 				password: '',
-				loading: true
+				loading: true,
+				loginSuccess: false
 			}
 		default:
 			return state;

@@ -30,7 +30,7 @@ const loginUserSuccess = (dispatch, user) => {
 		payload: user
 	})
 
-	Actions.main();
+	//Actions.main();
 }
 
 export const loginUser = ({email, password}) => {

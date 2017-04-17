@@ -16,8 +16,8 @@ class LoginForm extends Component{
 
 	onButtonPress(){
 		const {email, password} = this.props;
-		
-		//this.props.loginUser({email, password});
+
+		this.props.loginUser({email, password});
 	}
 
 	renderButton(){
@@ -25,12 +25,17 @@ class LoginForm extends Component{
 			return <Spinner size="large" />;
 		}
 
+		if(this.props.loginSuccess){
+			return <Text style={styles.loginSuccess}>Login Success</Text>
+		}
+
 		return(
-			<Button onPress={this.onButtonPress(this)}>Login</Button>
+			<Button onPress={this.onButtonPress.bind(this)}>Login</Button>
 		)
 	}
 
 	render(){
+
 		return(
 			<Card>
 				<CardSection>
@@ -69,13 +74,18 @@ const styles = {
 		fontSize: 20,
 		alignSelf: 'center',
 		color: 'red'
+	},
+	loginSuccess: {
+		fontSize: 20,
+		color: 'blue',
+		alignSelf: 'center'
 	}
 }
 
-const mapStateToProps = auth => {
-	const {email, password, error, loading} = auth;
+const mapStateToProps = state => {
+	const {email, password, error, loading, loginSuccess} = state.auth;
 
-	return {email, password, error, loading};
+	return {email, password, error, loading, loginSuccess};
 }
 
 export default connect(mapStateToProps, 

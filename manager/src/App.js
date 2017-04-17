@@ -6,10 +6,11 @@ import firebase from 'firebase';
 import ReduxThunk from 'redux-thunk';
 import reducers from './reducers/index';
 import LoginForm from './components/LoginForm';
+import Router from './Router';
 
 class App extends Component{
 
-	componentVillMount(){
+	componentWillMount(){
 		var config = {
 			apiKey: "AIzaSyBk7Jiqxuti9vtgtFcjWGtJ6Gs199tKdRk",
 			authDomain: "manager-74460.firebaseapp.com",
@@ -18,16 +19,14 @@ class App extends Component{
 			storageBucket: "manager-74460.appspot.com",
 			messagingSenderId: "584931490315"
 		};
-
 		firebase.initializeApp(config);
 	}
 
 	render(){
+		const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 		return(
-			<Provider store={createStore(reducers)}>
-				<View>
-					<LoginForm />
-				</View>
+			<Provider store={store}>
+				<Router />
 			</Provider>
 		)
 	}
