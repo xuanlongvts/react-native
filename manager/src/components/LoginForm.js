@@ -25,9 +25,9 @@ class LoginForm extends Component{
 			return <Spinner size="large" />;
 		}
 
-		if(this.props.loginSuccess){
-			return <Text style={styles.loginSuccess}>Login Success</Text>
-		}
+		// if(this.props.loginSuccess){
+		// 	return <Text style={styles.loginSuccess}>Login Success</Text>
+		// }
 
 		return(
 			<Button onPress={this.onButtonPress.bind(this)}>Login</Button>
