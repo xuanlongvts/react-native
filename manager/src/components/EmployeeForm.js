@@ -7,6 +7,7 @@ import {employeeUpdate} from '../actions/index';
 class EmployeeForm extends Component{
 
 	render(){
+
 		return(
 			<View>
 				<CardSection>
@@ -14,7 +15,7 @@ class EmployeeForm extends Component{
 						label="Name"
 						placeholder="NongNo"
 						value={this.props.name}
-						onChangeText={value => this.props.employeeUpdate({prop: 'name', value})}
+						onChangeText={val => this.props.employeeUpdate({prop: 'name', val})}
 					/>
 				</CardSection>
 
@@ -23,16 +24,16 @@ class EmployeeForm extends Component{
 						label="Phone"
 						placeholder="555-555-5555"
 						value={this.props.phone}
-						onChangeText={value => this.props.employeeUpdate({prop: 'phone', value})}
+						onChangeText={val => this.props.employeeUpdate({prop: 'phone', val})}
 					/>
 				</CardSection>
 
 				<CardSection>
-					<Text>Shift</Text>
+					<Text style={styles.pickerTextStyle}>Shift</Text>
 
 					<Picker
 						selectedValue={this.props.shift}
-						onValueChange={value => this.props.employeeUpdate({prop: 'shift', value})}
+						onValueChange={val => this.props.employeeUpdate({prop: 'shift', val})}
 					>
 						<Picker.Item label="Monday" value="Monday" />
 						<Picker.Item label="Tuesday" value="Tuesday" />

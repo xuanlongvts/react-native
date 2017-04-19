@@ -5,11 +5,15 @@ import {CardSection} from './common/index';
 
 class ListItem extends Component{
 
+	onRowPress(){
+		Actions.employeeEdit({employee: this.props.employee})
+	}
+
 	render(){
 		const {name} = this.props.employee;
 
 		return(
-			<TouchableWithoutFeedback>
+			<TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
 				<View>
 					<CardSection>
 						<Text style={styles.titileStyle}>{name}</Text>

@@ -18,8 +18,6 @@ class EmployeeList extends Component{
 	}
 
 	createDataSource({employees}){
-		console.log('employees: ', employees);
-
 		const ds = new ListView.DataSource({
 			rowHasChanged: (r1, r2) => r1 !== r2
 		})
