@@ -1,7 +1,8 @@
 import {
 	EMPLOYEE_UPDATE,
 	EMPLOYEE_CREATE,
-	EMPLOYEE_SAVE_SUCCESS
+	EMPLOYEE_SAVE_SUCCESS,
+	EMPLOYEE_RESET_FORM
 } from '../actions/types';
 
 const init_state = {
@@ -18,8 +19,8 @@ export default (state = init_state, action) => {
 				[action.payload.prop]: action.payload.val
 			}
 		case EMPLOYEE_CREATE:
-			return init_state;
 		case EMPLOYEE_SAVE_SUCCESS:
+		case EMPLOYEE_RESET_FORM:
 			return init_state;
 		default:
 			return state;

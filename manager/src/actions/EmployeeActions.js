@@ -4,7 +4,8 @@ import {
 	EMPLOYEE_UPDATE,
 	EMPLOYEE_CREATE,
 	EMPLOYEES_FETCH_SUCCESS,
-	EMPLOYEE_SAVE_SUCCESS
+	EMPLOYEE_SAVE_SUCCESS,
+	EMPLOYEE_RESET_FORM
 } from './types';
 
 export const employeeUpdate = ({prop, val}) => ({
@@ -16,7 +17,7 @@ export const employeeCreate = ({name, phone, shift}) => {
 	const {currentUser} = firebase.auth();
 
 	return (dispatch) => {
-		firebase.database().ref(`users/${currentUser.uid}/employees`)
+		firebase.database().ref(`/users/${currentUser.uid}/employees`)
 		.push({name, phone, shift})
 		.then(() => {
 				dispatch({ type: EMPLOYEE_CREATE });
@@ -27,11 +28,18 @@ export const employeeCreate = ({name, phone, shift}) => {
 	}	
 }
 
+export const employeeResetForm = () => dispatch => {
+	dispatch({
+		type: EMPLOYEE_RESET_FORM
+	})
+}
+
+
 export const employeesFetch = () => {
 	const {currentUser} = firebase.auth();
 
 	return(dispatch) => {
-		firebase.database().ref(`users/${currentUser.uid}/employees`)
+		firebase.database().ref(`/users/${currentUser.uid}/employees`)
 			.on('value', snapshot => {
 				dispatch({
 					type: EMPLOYEES_FETCH_SUCCESS,

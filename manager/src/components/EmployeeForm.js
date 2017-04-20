@@ -2,9 +2,15 @@ import React, {Component} from 'react';
 import {View, Text, Picker} from 'react-native';
 import {connect} from 'react-redux';
 import {CardSection, Input} from './common';
-import {employeeUpdate} from '../actions/index';
+import {employeeUpdate, employeeResetForm} from '../actions/index';
 
 class EmployeeForm extends Component{
+
+	componentWillMount() {
+		if(this.props.createNew){
+			this.props.employeeResetForm();
+		}
+	}
 
 	render(){
 
@@ -63,5 +69,5 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, 
-	{employeeUpdate}
+	{employeeUpdate, employeeResetForm}
 )(EmployeeForm);

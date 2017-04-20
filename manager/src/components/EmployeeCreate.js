@@ -16,7 +16,7 @@ class EmployeeCreate extends Component{
 	render(){
 		return(
 			<Card>
-				<EmployeeForm {...this.props} />
+				<EmployeeForm createNew />
 				<Button onPress={this.onButtonPress.bind(this)}>
 					Create
 				</Button>
