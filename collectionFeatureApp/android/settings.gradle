@@ -1,0 +1,3 @@
+rootProject.name = 'collectionFeatureApp'
+
+include ':app'
