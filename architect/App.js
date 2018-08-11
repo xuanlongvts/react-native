@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { Root } from 'native-base';
-import { Font, AppLoading } from 'expo';
+import { Root, Spinner } from 'native-base';
+import { Font } from 'expo';
 
 import AppReducer from './src/reducer';
 import { AppNavigator, middleware } from './src/router';
@@ -29,7 +29,7 @@ export default class App extends PureComponent {
         if (loading) {
             return (
                 <Root>
-                    <AppLoading />
+                    <Spinner color="green" />
                 </Root>
             );
         }

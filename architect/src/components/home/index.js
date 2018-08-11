@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Text, Container, Card, CardItem, Body, Content, Header, Title, Left, Icon, Right } from 'native-base';
+import { Button, Text, Container, Card, CardItem, Body, Content, Header, Title, Right } from 'native-base';
 
-import { DrawerOpen, ChatScreen, ProfileScreen } from '../../router/listRouters';
+import { ChatScreen, ProfileScreen } from '../../router/listRouters';
+import MenuHamburger from '../menuHamburger';
 
 class Home extends PureComponent {
     render() {
@@ -11,11 +12,7 @@ class Home extends PureComponent {
         return (
             <Container>
                 <Header>
-                    <Left>
-                        <Button transparent onPress={() => navigation.openDrawer(DrawerOpen)}>
-                            <Icon name="menu" />
-                        </Button>
-                    </Left>
+                    <MenuHamburger navigation={navigation} />
                     <Body>
                         <Title>HomeScreen</Title>
                     </Body>

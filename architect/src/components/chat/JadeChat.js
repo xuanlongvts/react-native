@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { NavigationActions } from 'react-navigation';
-import { Button, Text, Container, Body, Content, Header, Left, Right, Icon, Title, Input, Label, Item } from 'native-base';
+import { Button, Text, Container, Body, Content, Header, Right, Title, Input, Label, Item } from 'native-base';
 
-import { DrawerOpen, ProfileScreen } from '../../router/listRouters';
+import { ProfileScreen } from '../../router/listRouters';
+import MenuHamburger from '../menuHamburger';
 
 class JadeChat extends PureComponent {
     render() {
@@ -12,11 +13,7 @@ class JadeChat extends PureComponent {
         return (
             <Container>
                 <Header>
-                    <Left>
-                        <Button transparent onPress={() => navigation.openDrawer(DrawerOpen)}>
-                            <Icon name="menu" />
-                        </Button>
-                    </Left>
+                    <MenuHamburger navigation={navigation} />
                     <Body>
                         <Title>Jade Chat</Title>
                     </Body>

@@ -2,10 +2,10 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Alert } from 'react-native';
 
-import { Text, Container, Card, CardItem, Body, Content, Header, Left, Right, Icon, Title, Button } from 'native-base';
+import { Text, Container, Card, CardItem, Body, Content, Header, Right, Icon, Title, Button } from 'native-base';
 
-import { DrawerOpen } from '../../router/listRouters';
 import { EditScreenOne } from './listRouters';
+import MenuHamburger from '../menuHamburger';
 
 class Profile extends PureComponent {
     componentDidMount() {
@@ -44,11 +44,7 @@ Profile.navigationOptions = ({ navigation }) => {
     return {
         header: (
             <Header>
-                <Left>
-                    <Button transparent onPress={() => navigation.openDrawer(DrawerOpen)}>
-                        <Icon name="menu" />
-                    </Button>
-                </Left>
+                <MenuHamburger navigation={navigation} />
                 <Body>
                     <Title>Profile</Title>
                 </Body>

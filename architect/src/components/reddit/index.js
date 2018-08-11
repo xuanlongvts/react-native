@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Text, Container, Card, CardItem, Body, Content, Header, Title, Left, Icon, Right } from 'native-base';
+import { Text, Container, Card, CardItem, Body, Content, Header, Title, Right } from 'native-base';
 
-import { DrawerOpen } from '../../router/listRouters';
+import MenuHamburger from '../menuHamburger';
 
 class Reddit extends PureComponent {
     render() {
@@ -11,11 +11,7 @@ class Reddit extends PureComponent {
         return (
             <Container>
                 <Header>
-                    <Left>
-                        <Button transparent onPress={() => navigation.openDrawer(DrawerOpen)}>
-                            <Icon name="menu" />
-                        </Button>
-                    </Left>
+                    <MenuHamburger navigation={navigation} />
                     <Body>
                         <Title>HomeScreen</Title>
                     </Body>
