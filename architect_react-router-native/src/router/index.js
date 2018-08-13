@@ -1,10 +1,5 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import Drawer from 'react-native-drawer';
-import { Container } from 'native-base';
-
-import HeaderComp from './header';
-import Sidebar from './header/sidebar';
 import RoutersAuthen from './RoutersAuthen';
 
 class Routers extends PureComponent {
@@ -17,4 +12,10 @@ class Routers extends PureComponent {
     }
 }
 
-export default Routers;
+const mapStateToProps = state => {
+    return {
+        isLoading: state.initStateTest.isLoading
+    };
+};
+
+export default connect(mapStateToProps)(Routers);
