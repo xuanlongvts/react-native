@@ -5,6 +5,8 @@ import { Actions } from 'react-native-router-flux';
 
 class Home extends PureComponent {
     render() {
+        const { openControlPanel } = this.props;
+
         return (
             <Container>
                 <Content padder>
@@ -15,7 +17,7 @@ class Home extends PureComponent {
                             </Body>
                         </CardItem>
                     </Card>
-                    <Button full rounded dark style={{ marginTop: 10 }}>
+                    <Button full rounded dark style={{ marginTop: 10 }} onPress={() => openControlPanel()}>
                         <Text>Chat With People</Text>
                     </Button>
                     <Button full rounded primary style={{ marginTop: 10 }} onPress={() => Actions.redditScreen()}>
@@ -26,5 +28,9 @@ class Home extends PureComponent {
         );
     }
 }
+
+Home.propTypes = {
+    openControlPanel: PropTypes.func.isRequired
+};
 
 export default Home;

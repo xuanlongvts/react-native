@@ -6107,6 +6107,10 @@ react-native-maps@0.21.0:
     babel-plugin-module-resolver "^2.3.0"
     babel-preset-react-native "1.9.0"
 
+react-native-message-bar@^2.0.10:
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/react-native-message-bar/-/react-native-message-bar-2.0.10.tgz#34632bdf2cbfe0f51ae4f1e9a91c42b4394a11c2"
+
 react-native-router-flux@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/react-native-router-flux/-/react-native-router-flux-4.0.1.tgz#78eeb01395aeec268292912c8d88bf1264a68e82"
@@ -6289,7 +6293,7 @@ react-navigation-tabs@0.6.0:
     react-native-safe-area-view "^0.7.0"
     react-native-tab-view "^1.0.0"
 
-react-navigation@^2.8.0:
+react-navigation@^2.11.2, react-navigation@^2.8.0:
   version "2.11.2"
   resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-2.11.2.tgz#cd099f6d7d09efe48ef8463614a3abb113d45c01"
   dependencies:
