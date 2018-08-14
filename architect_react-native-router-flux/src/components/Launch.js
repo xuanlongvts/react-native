@@ -19,6 +19,7 @@ class Launch extends React.Component {
                 <Text>Welcome</Text>
                 <Button title="Go to Login" onPress={() => Actions.login({ data: 'Custom data', title: 'Custom title' })} />
                 <Button title="Go to Reddit api" onPress={() => Actions.redditApi()} />
+                <Button title="Go to Map" onPress={() => Actions.mapView()} />
                 <Button title="Go to Register page" onPress={() => Actions.register()} />
                 <Button title="Display Error Modal" onPress={() => Actions.error()} />
                 <Button title="Display Lightbox" onPress={() => Actions.demo_lightbox({ data: 'passed data' })} />

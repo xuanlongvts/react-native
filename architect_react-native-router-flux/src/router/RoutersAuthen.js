@@ -23,6 +23,7 @@ import CustomNavBar from '../components/CustomNavBar';
 import CustomNavBar2 from '../components/CustomNavBar2';
 
 import RedditApiCom from '../components/reddit';
+import MapView from '../components/Map';
 
 class RoutersAuthen extends PureComponent {
     constructor(props) {
@@ -44,6 +45,8 @@ class RoutersAuthen extends PureComponent {
                                 <Scene key="launch" component={Launch} title="Launch" initial />
 
                                 <Scene key="redditApi" title="Reddit Api" component={RedditApiCom} back />
+
+                                <Scene key="mapView" title="Reddit Api" component={MapView} />
 
                                 <Stack key="customNavBar" hideTabBar titleStyle={{ alignSelf: 'center' }}>
                                     <Scene
