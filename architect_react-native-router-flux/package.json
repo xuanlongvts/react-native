@@ -18,7 +18,8 @@
         "eject": "react-native-scripts eject",
         "android": "react-native-scripts android",
         "ios": "react-native-scripts ios",
-        "test": "jest"
+        "test": "jest",
+        "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=19001'"
     },
     "jest": {
         "preset": "jest-expo"
@@ -40,6 +41,7 @@
         "react-redux": "^5.0.7",
         "react-router-redux": "^4.0.8",
         "redux": "^4.0.0",
+        "redux-devtools-extension": "^2.13.5",
         "redux-immutable": "^4.0.0",
         "redux-saga": "^0.16.0"
     }

@@ -50,12 +50,7 @@ class App extends PureComponent {
                 </p> */}
 
                 {isFetching && posts.length === 0 && <Spinner color="green" />}
-                {!isFetching &&
-                    posts.length === 0 && (
-                        <View>
-                            <Text>Empty.</Text>
-                        </View>
-                    )}
+                {!isFetching && posts.length === 0 && <Text>Empty.</Text>}
 
                 {posts.length > 0 && (
                     <List

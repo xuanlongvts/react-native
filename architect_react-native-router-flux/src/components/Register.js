@@ -18,10 +18,10 @@ const Register = () => (
         <Button onPress={() => Actions.register2()}>
             <Text>Register</Text>
         </Button>
-        <Button onPress={Actions.home}>
+        <Button onPress={() => Actions.home()}>
             <Text>Replace screen</Text>
         </Button>
-        <Button onPress={Actions.pop}>
+        <Button onPress={() => Actions.pop()}>
             <Text>Back</Text>
         </Button>
     </View>

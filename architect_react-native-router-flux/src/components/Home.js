@@ -27,7 +27,9 @@ class Home extends React.Component {
         return (
             <View style={styles.container}>
                 <Text>Replace screen</Text>
-                <Button onPress={Actions.pop}>Back</Button>
+                <Button onPress={Actions.pop}>
+                    <Text>Back</Text>
+                </Button>
             </View>
         );
     }
