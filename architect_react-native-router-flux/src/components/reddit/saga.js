@@ -1,11 +1,13 @@
-import { put, take, call, fork } from 'redux-saga/effects';
+import { put, take, call, fork, select } from 'redux-saga/effects';
 import API from '../../_services/api';
-
-const delay = ms => new Promise(res => setTimeout(res, ms));
+import * as actionList from './actions';
+import * as nameActList from './consts';
+import { postsByRedditSelector } from './selectors';
 
 const fetchPostsApi = reddit => {
     const restApi = new API();
     const path = `/r/${reddit}.json`;
+
     return restApi
         .fetch(path)
         .then(res => {
@@ -14,21 +16,44 @@ const fetchPostsApi = reddit => {
             });
         })
         .catch(err => {
-            console.log('err: ', err);
+            put({
+                type: 'ERROR',
+                err
+            });
+            // console.log('err: ', err)
         });
 };
 
-function* test() {
-    try {
-        yield delay(100);
+function* fetchPosts() {
+    while (true) {
+        const { reddit } = yield take(nameActList.SELECT_REDDIT);
 
-        // const data = yield call(fetchPostsApi, 'reactjs');
-        console.log('data: ');
-    } catch (err) {
-        console.log('err: ', err);
+        let dataPosts = null;
+        let getPostsFromState = yield select(postsByRedditSelector);
+        getPostsFromState = getPostsFromState.getIn([reddit, 'items']);
+
+        getPostsFromState ? (dataPosts = getPostsFromState) : (dataPosts = yield call(fetchPostsApi, reddit));
+
+        yield put(actionList.receivePosts(reddit, dataPosts));
+    }
+}
+
+function* invalidateReddit() {
+    // const delay = ms => new Promise(res => setTimeout(res, ms));
+    while (true) {
+        const { reddit } = yield take(nameActList.INVALIDATE_REDDIT);
+
+        let dataPosts = null;
+        let getPostsFromState = yield select(postsByRedditSelector);
+        getPostsFromState = getPostsFromState.getIn([reddit, 'items']);
+
+        getPostsFromState ? (dataPosts = getPostsFromState) : (dataPosts = yield call(fetchPostsApi, reddit));
+
+        yield put(actionList.receivePosts(reddit, dataPosts));
     }
 }
 
 export default function* root() {
-    yield fork(test);
+    yield fork(fetchPosts);
+    yield fork(invalidateReddit);
 }

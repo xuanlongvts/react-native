@@ -22,6 +22,8 @@ import CustomNavBarView from '../components/CustomNavBarView';
 import CustomNavBar from '../components/CustomNavBar';
 import CustomNavBar2 from '../components/CustomNavBar2';
 
+import RedditApiCom from '../components/reddit';
+
 class RoutersAuthen extends PureComponent {
     constructor(props) {
         super(props);
@@ -40,6 +42,8 @@ class RoutersAuthen extends PureComponent {
                             <Stack hideNavBar key="root" titleStyle={{ alignSelf: 'center' }}>
                                 <Scene key="echo" back clone component={EchoView} getTitle={({ navigation }) => navigation.state.key} />
                                 <Scene key="launch" component={Launch} title="Launch" initial />
+
+                                <Scene key="redditApi" title="Reddit Api" component={RedditApiCom} back />
 
                                 <Stack key="customNavBar" hideTabBar titleStyle={{ alignSelf: 'center' }}>
                                     <Scene
@@ -145,6 +149,7 @@ class RoutersAuthen extends PureComponent {
                         </Lightbox>
 
                         <Scene key="error" component={ErrorModal} />
+
                         <Stack key="login" path="login/:data" titleStyle={{ alignSelf: 'center' }}>
                             <Scene
                                 key="loginModal"
