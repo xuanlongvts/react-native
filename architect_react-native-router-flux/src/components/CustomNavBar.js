@@ -1,5 +1,5 @@
+import React, { PureComponent } from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React from 'react';
 import { Actions } from 'react-native-router-flux';
 
 const styles = StyleSheet.create({
@@ -14,10 +14,10 @@ const styles = StyleSheet.create({
     }
 });
 
-export default class CustomNavBar extends React.Component {
-    // constructor(props) {
-    //   super(props)
-    // }
+class CustomNavBar extends PureComponent {
+    constructor(props) {
+        super(props);
+    }
 
     _renderLeft() {
         if (Actions.currentScene === 'customNavBar1') {
@@ -91,3 +91,5 @@ export default class CustomNavBar extends React.Component {
         );
     }
 }
+
+export default CustomNavBar;

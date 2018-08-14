@@ -40,9 +40,15 @@ export default class extends React.Component {
                 <Text>Login page 1</Text>
                 <Text>Title: {title}</Text>
                 <Text>Data: {data}</Text>
-                <Button onPress={() => Actions.loginModal2({ data: 'Custom data2', title: 'Custom title2' })}>Login 2</Button>
-                <Button onPress={() => Actions.refresh({ title: 'Changed title', data: 'Changed data' })}>Change title</Button>
-                <Button onPress={Actions.pop}>Back</Button>
+                <Button onPress={() => Actions.loginModal2({ data: 'Custom data2', title: 'Custom title2' })}>
+                    <Text>Login 2</Text>
+                </Button>
+                <Button onPress={() => Actions.refresh({ title: 'Changed title', data: 'Changed data' })}>
+                    <Text>Change title</Text>
+                </Button>
+                <Button onPress={Actions.pop}>
+                    <Text>Back</Text>
+                </Button>
             </View>
         );
     }

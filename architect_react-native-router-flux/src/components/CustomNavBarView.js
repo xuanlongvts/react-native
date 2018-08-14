@@ -23,35 +23,39 @@ class TabView extends React.Component {
     render() {
         return (
             <View style={[styles.container, this.props.sceneStyle]}>
-                <Button onPress={() => Actions.pop()}>Back</Button>
-                <Button onPress={() => Actions.replace('launch')}>Welcome Page</Button>
+                <Button onPress={() => Actions.pop()}>
+                    <Text>Back</Text>
+                </Button>
+                <Button onPress={() => Actions.replace('launch')}>
+                    <Text>Welcome Page</Text>
+                </Button>
                 <Button
                     onPress={() => {
                         Actions.customNavBar1();
                     }}
                 >
-                    Switch to Scene with CustomNavBar #1
+                    <Text>Switch to Scene with CustomNavBar #1</Text>
                 </Button>
                 <Button
                     onPress={() => {
                         Actions.customNavBar2();
                     }}
                 >
-                    Switch to Scene with CustomNavBar #2
+                    <Text>Switch to Scene with CustomNavBar #2</Text>
                 </Button>
                 <Button
                     onPress={() => {
                         Actions.customNavBar3();
                     }}
                 >
-                    Switch to Scene with different CustomNavBar{' '}
+                    <Text>Switch to Scene with different CustomNavBar </Text>
                 </Button>
                 <Button
                     onPress={() => {
                         Actions.hiddenNavBar();
                     }}
                 >
-                    Switch to Scene with a navBar hidden
+                    <Text>Switch to Scene with a navBar hidden</Text>
                 </Button>
             </View>
         );

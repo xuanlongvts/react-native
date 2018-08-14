@@ -26,9 +26,11 @@ export default class extends React.Component {
                         Actions.pop({ refresh: { data: 'Data after pop', title: 'title after pop' } });
                     }}
                 >
-                    Back and refresh
+                    <Text>Back and refresh</Text>
                 </Button>
-                <Button onPress={() => Actions.loginModal3({ data: 'Custom data3', title: 'Custom title3' })}>Login 3</Button>
+                <Button onPress={() => Actions.loginModal3({ data: 'Custom data3', title: 'Custom title3' })}>
+                    <Text>Login 3</Text>
+                </Button>
             </View>
         );
     }

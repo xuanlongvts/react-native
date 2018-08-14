@@ -33,10 +33,18 @@ export default class extends React.Component {
                 <Text>Login page 3</Text>
                 <Text>Title: {title}</Text>
                 <Text>Data: {data}</Text>
-                <Button onPress={Actions.pop}>Back</Button>
-                <Button onPress={popToLogin1}>To Login</Button>
-                <Button onPress={popToLogin2}>To Login2</Button>
-                <Button onPress={popToRoot}>To Root</Button>
+                <Button onPress={Actions.pop}>
+                    <Text>Back</Text>
+                </Button>
+                <Button onPress={popToLogin1}>
+                    <Text>To Login</Text>
+                </Button>
+                <Button onPress={popToLogin2}>
+                    <Text>To Login2</Text>
+                </Button>
+                <Button onPress={popToRoot}>
+                    <Text>To Root</Text>
+                </Button>
             </View>
         );
     }
