@@ -1,5 +1,25 @@
 {
-  "expo": {
-    "sdkVersion": "27.0.0"
-  }
+    "expo": {
+        "name": "architect-with-map",
+        "description": "architect for react native and integration google map",
+        "icon": "./assets/icon.png",
+        "privacy": "public",
+        "version": "1.0.0",
+        "platforms": ["ios", "android"],
+        "orientation": "portrait",
+        "slug": "architect",
+        "sdkVersion": "27.0.0",
+        "ios": {
+            "bundleIdentifier": "com.codingmechanic.mapcuny",
+            "config": {
+                "googleMapsApiKey": "AIzaSyAV7JyDU06qdl_AZvUV2cIOFskfQsTHlEo"
+            }
+        },
+        "android": {
+            "package": "com.codingmechanic.mapcuny",
+            "config": {
+                "googleMaps": { "apiKey": "AIzaSyAV7JyDU06qdl_AZvUV2cIOFskfQsTHlEo" }
+            }
+        }
+    }
 }

@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
 import { StyleSheet } from 'react-native';
-import { View } from 'native-base';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import { View, Button, Text } from 'native-base';
+import { MapView } from 'expo';
+import { Actions } from 'react-native-router-flux';
+import { PROVIDER_GOOGLE } from 'react-native-maps';
 
 const styles = StyleSheet.create({
     container: {
@@ -41,6 +43,9 @@ class MapViewCom extends PureComponent {
         return (
             <View style={styles.container}>
                 <MapView style={styles.map} provider={PROVIDER_GOOGLE} initialRegion={region} />
+                <Button onPress={Actions.pop}>
+                    <Text>Back</Text>
+                </Button>
             </View>
         );
     }

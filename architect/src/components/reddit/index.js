@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Text, Container, List, ListItem, Spinner, View, Picker } from 'native-base';
+import { Text, Container, List, ListItem, Spinner, View, Picker, Button } from 'native-base';
+import { Actions } from 'react-native-router-flux';
 import { selectReddit, invalidateReddit } from './actions';
 
 class App extends PureComponent {
@@ -41,6 +42,10 @@ class App extends PureComponent {
                         ))}
                     </Picker>
                 </View>
+
+                <Button onPress={Actions.pop}>
+                    <Text>Back</Text>
+                </Button>
 
                 {/* <p>
                     {lastUpdated && <span>Last updated at {new Date(lastUpdated).toLocaleTimeString()}. </span>}
